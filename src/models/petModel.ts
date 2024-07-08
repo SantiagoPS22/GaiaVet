@@ -8,7 +8,7 @@ interface MascotaAttributes {
   raza: string;
   peso: number;
   temperamento: string;
-  foto: Blob; // Asumiendo que ImageData es Blob, podrías necesitar ajustar este tipo según tu implementación.
+  foto: Blob; 
   fk_cedulaU: string;
 }
 
@@ -58,16 +58,16 @@ class Mascota extends Model<MascotaAttributes> implements MascotaAttributes {
           type: DataTypes.STRING(15),
           allowNull: false,
           references: {
-            model: 'usuario', // Nombre de la tabla de referencia
+            model: 'usuario', 
             key: 'cedula',
           },
         },
       },
       {
         sequelize,
-        tableName: 'mascota', // Nombre de la tabla en MySQL
-        timestamps: false, // Deshabilitar campos createdAt y updatedAt
-        underscored: true, // Utilizar nombres de columna en snake_case
+        tableName: 'mascota', 
+        timestamps: false,
+        underscored: true, 
       }
     );
   }
